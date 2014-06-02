@@ -1,0 +1,8 @@
+<h1>Here are the posts for <%= @category.name %></h1>
+
+<p><%= link_to 'Make a New Post', new_category_post_path(@category) %></p>
+<br>
+
+<% @posts.each do |post| %>
+  <p><%= link_to post.title, [post.category, post] %></p>
+<% end %>

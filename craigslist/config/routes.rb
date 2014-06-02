@@ -1,15 +1,17 @@
 Craigslist::Application.routes.draw do
-  # resources :categories do
-  #   resources :posts
-  # end
+  resources :categories do
+    resources :posts
+  end
   get '/' => 'categories#index'
-  get '/categories/:id/posts/index' => 'posts#index'
-  get '/categories/:id/posts/:id' => 'posts#show'
-  get '/posts/new' => 'posts#new'
-  post '/posts/create' => 'posts#create'
-  get '/posts/:id/edit' => 'posts#edit'
-  put '/posts/:id' => 'posts#update'
-  delete '/posts/:id' => 'posts#destroy'
+  # get '/' redirect_to  index_url(@category)????
+
+  # get '/categories/:id/posts/index' => 'posts#index'
+  # get '/categories/:id/posts/:id' => 'posts#show'
+  # get '/posts/new' => 'posts#new'
+  # post '/posts/create' => 'posts#create'
+  # get '/posts/:id/edit' => 'posts#edit'
+  # put '/posts/:id' => 'posts#update'
+  # delete '/posts/:id' => 'posts#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
