@@ -1,3 +1,9 @@
 <h1><%= @post.title  %></h1>
 
 <p><%= @post.content  %></p>
+
+<%= link_to 'Edit This Post', [:edit, @post.category, @post] %>
+
+<%= link_to 'Delete This Post', [@post.category, @post],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
